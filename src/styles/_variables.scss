@@ -1,0 +1,27 @@
+$main-color: #3e3e3e;
+$background-color: #bfcad0;
+
+$secondary-color: #792020;
+$secondary-color-dark: #660000;
+$secondary-color-light: #c69f9f;
+
+$accent-1-dark: #001224;
+$accent-1: #002244;
+$accent-1-light: #204d79;
+
+$accent-2: #dbc6a0;
+$accent-2-light: #faeee0;
+$accent-2-extra-light: #fff8f0;
+$accent-2-dark: #9e8e70;
+
+$font-family: "Source Sans Pro", sans-serif;
+$cursive-family: "Dancing Script", cursive;
+$impact-family: "Alfa Slab One", cursive;
+
+$mobile-size: 768px;
+$large-size: 1440px;
+
+@font-face {
+  font-family: "Barcelony";
+  src: URL("../../assets/fonts/Barcelony.ttf") format("truetype");
+}

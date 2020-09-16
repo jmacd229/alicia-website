@@ -1,0 +1,28 @@
+<header>
+  <div class="nav-wrapper">
+    <div class="nav-menu">
+      <button
+        class="btn"
+        *ngFor="let section of sections"
+        (click)="clickLink(section)"
+      >
+        {{ section.link }}
+      </button>
+    </div>
+    <button
+      @fadeInOut
+      *ngIf="showBackToTop"
+      class="btn back-to-top"
+      (click)="backToTop()"
+    >
+      <span>Back to top</span>
+    </button>
+  </div>
+  <h1>
+    <img src="../../assets/images/Logo-2.svg" alt="Alicia MacDougall" />
+  </h1>
+  <div class="triangle light"></div>
+</header>
+<div class="d-flex justify-content-center">
+  <div #triangle class="triangle"></div>
+</div>

@@ -1,0 +1,14 @@
+<div class="main">
+  <div class="left"></div>
+  <div class="caption">
+    <h2 translate="sections.work.title"></h2>
+    <p *ngFor="let paragraph of 'sections.work.body' | translate">
+      {{ paragraph }}
+    </p>
+    <div class="line"></div>
+  </div>
+  <img
+    [src]="'sections.work.image.url' | translate"
+    [alt]="'sections.work.image.alt' | translate"
+  />
+</div>

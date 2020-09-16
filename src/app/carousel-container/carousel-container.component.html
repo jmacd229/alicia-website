@@ -1,0 +1,19 @@
+<div class="main row no-gutters">
+  <div class="col-12 col-lg-8">
+    <carousel>
+      <slide *ngFor="let slide of 'carousel.slides' | translate">
+        <img
+          [src]="slide.url"
+          [alt]="slide.alt"
+          style="display: block; width: 100%;"
+        />
+      </slide>
+    </carousel>
+  </div>
+  <div class="col-12 col-lg-4 flex-shrink-1">
+    <h2 translate="carousel.title"></h2>
+    <h3 translate="carousel.subtitle"></h3>
+    <p translate="carousel.body"></p>
+  </div>
+</div>
+<div class="separator"></div>

@@ -1,0 +1,36 @@
+{
+  "carousel": {
+    "title": "Title",
+    "subtitle": "Subtitle",
+    "body": "Body text",
+    "slides": [
+      { "url": "assets/images/carousel_1.jpg", "alt": "image 1" },
+      { "url": "assets/images/carousel_2.jpg", "alt": "image 2" },
+      { "url": "assets/images/carousel_3.jpg", "alt": "image 3" }
+    ]
+  },
+  "sections": {
+    "about": {
+      "link": "About Me",
+      "title": {
+        "greeting": "Hi I'm",
+        "name": "Alicia"
+      },
+      "body": ["Paragraph 1", "Paragraph 2"]
+    },
+    "work": {
+      "link": "Work with Me",
+      "title": "Another title",
+      "body": ["Paragraph 1", "Paragraph 2"],
+      "image": { "url": "assets/images/alicia_1.jpg", "alt": "image 4" }
+    },
+    "resources": {
+      "link": "Free Resources",
+      "title": "Free Resources",
+      "resources": []
+    },
+    "contact": {
+      "link": "Contact Me"
+    }
+  }
+}

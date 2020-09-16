@@ -1,0 +1,52 @@
+<div class="main">
+  <div>
+    <h3 class="impact" translate="sections.resources.title"></h3>
+    <button
+      [ngClass]="{ 'height-0': !activeCategory }"
+      class="back btn"
+      (click)="select()"
+    >
+      <i class="material-icons">double_arrow</i> Back
+    </button>
+    <div
+      class="resources-container"
+      [ngClass]="{
+        'resources-expanded': activeCategory,
+        'details-expanded': activeResource
+      }"
+    >
+      <div class="categories">
+        <button
+          [ngClass]="{ active: category === activeCategory }"
+          class="btn"
+          *ngFor="let category of data"
+          (click)="select(category)"
+        >
+          {{ category.title }}
+        </button>
+      </div>
+      <div class="resources">
+        <button
+          [ngClass]="{ active: resource === activeResource }"
+          class="btn"
+          *ngFor="let resource of activeResources"
+          (click)="select(resource)"
+        >
+          {{ resource.title }}
+        </button>
+      </div>
+      <div class="details">
+        <h4>{{ activeDetails?.title }}</h4>
+        <a
+          *ngIf="activeDetails?.link"
+          target="_blank"
+          [attr.href]="activeDetails?.link.href"
+          >{{ activeDetails?.link.title }}</a
+        >
+        <p>
+          {{ activeDetails?.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,218 @@
+@import "../../styles/variables";
+
+@mixin wipe-text($color) {
+  background: linear-gradient(to right, $color, $color 50%, $main-color 50%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: 100%;
+  transition: background-position 500ms linear;
+}
+
+@mixin wipe-svg($length, $color) {
+  transition: stroke-dashoffset 500ms linear;
+  stroke-dasharray: $length;
+  stroke-dashoffset: $length;
+  stroke: $color;
+}
+
+#email {
+  svg path:nth-child(2) {
+    @include wipe-svg(142, $accent-1-light);
+  }
+  > div:not(.title) {
+    @include wipe-text($accent-1-light);
+  }
+  &:hover {
+    > div:not(.title) {
+      background-position: 0 100%;
+    }
+    svg path:nth-child(2) {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+#phone {
+  svg path:nth-child(2) {
+    @include wipe-svg(65, $secondary-color);
+  }
+  > div:not(.title) {
+    @include wipe-text($secondary-color);
+  }
+  &:hover {
+    > div:not(.title) {
+      background-position: 0 100%;
+    }
+    svg path:nth-child(2) {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+#location {
+  svg path:nth-child(2) {
+    @include wipe-svg(70, $accent-2-dark);
+  }
+  > div:not(.title) {
+    @include wipe-text($accent-2-dark);
+    line-height: 20px;
+    text-align: center;
+  }
+  &:hover {
+    > div:not(.title) {
+      background-position: 0 100%;
+    }
+    svg path:nth-child(2) {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+#socials {
+  $facebook-blue: #2d88ff;
+
+  div:first-child svg path:nth-child(2) {
+    @include wipe-svg(63, url(#insta));
+  }
+  div:nth-child(2) svg path:nth-child(2) {
+    @include wipe-svg(90, $facebook-blue);
+  }
+  > div:not(.title) {
+    align-items: flex-start;
+    line-height: 20px;
+    text-align: center;
+    > div:first-child {
+      background: linear-gradient(
+        to right,
+        #fdf497,
+        #fd5949,
+        #d6249f,
+        #285aeb 50%,
+        $main-color 50%
+      );
+      background-size: 200% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-position: 100%;
+      transition: background-position 500ms linear;
+    }
+    > div:nth-child(2) {
+      @include wipe-text($facebook-blue);
+    }
+  }
+  &:hover {
+    > div:not(.title) > div {
+      background-position: 0 100%;
+    }
+    div svg path:nth-child(2) {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  .title-card {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width: 180px;
+    min-height: 500px;
+    justify-content: center;
+    border-right: 5px solid $main-color;
+    h3 {
+      transform: rotate(-90deg);
+      letter-spacing: 1px;
+      span:not(.cursive){
+        text-transform: uppercase;
+      }
+      .cursive {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .methods {
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $accent-2-light;
+    > div {
+      background-color: $accent-2-light;
+      transition: background-color 500ms linear;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      border: 6px solid white;
+      width: 300px;
+      height: 300px;
+      margin: 20px;
+      > div:not(.title) {
+        padding-bottom: 24px;
+        font-size: 24px;
+        margin-bottom: auto;
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        svg {
+          height: 64px;
+          margin-bottom: 8px;
+          path:first-child {
+            stroke: $main-color;
+          }
+        }
+      }
+      .title {
+        position: absolute;
+        z-index: 1;
+        font-family: $cursive-family;
+        font-size: 48px;
+        line-height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        border-top: 6px solid white;
+        background-color: $accent-2-light;
+        &::before {
+          content: "";
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          transform: rotate(45deg);
+          border-top: 5px solid white;
+          border-left: 5px solid white;
+          background-color: $accent-2-light;
+          bottom: 24px;
+          z-index: -1;
+        }
+      }
+      &:hover {
+        background-color: $accent-2-extra-light;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-size) {
+  .main {
+    flex-direction: column;
+    .title-card {
+      height: auto;
+      min-height: unset;
+      width: auto;
+      border-bottom: 5px solid #3e3e3e;
+      border-right: none;
+      h3 {
+        transform: none;
+        margin: 16px 0;
+      }
+    }
+  }
+}

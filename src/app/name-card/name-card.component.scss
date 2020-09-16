@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 32px;
+  background-color: white;
+  p {
+    max-width: 600px;
+    &:last-child {
+      border-bottom: 2px solid $main-color;
+      padding-bottom: 32px;
+    }
+  }
+}

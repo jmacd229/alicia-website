@@ -1,0 +1,10 @@
+<div class="main">
+  <h3 class="mixed-font-title">
+    <div translate="sections.about.title.greeting"></div>
+    <div class="cursive" translate="sections.about.title.name"></div>
+    <div>.</div>
+  </h3>
+  <p *ngFor="let paragraph of 'sections.about.body' | translate">
+    {{ paragraph }}
+  </p>
+</div>
